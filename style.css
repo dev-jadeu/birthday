@@ -1,0 +1,101 @@
+body {
+    background-color: #78c1fe;
+    /* background-image:
+        url(images/bg-img.png); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh;
+}
+
+main {
+    position: relative;
+}
+
+.cheska-cont {
+    display: flex;
+    justify-content: center;  
+    align-items: center;       
+    height: 3vh;
+    position: relative; /* add this */
+    z-index: 3;
+}
+
+.wave-bg {
+    margin-top: 790px;
+    width: 750px;
+    animation: moveSide 0.9s infinite alternate ease-in-out;
+}
+
+@keyframes moveSide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100px);
+    }
+}
+
+.board-overlay {
+    position: absolute;
+    width: 350px; 
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: sway 0.8s infinite ease-in-out;
+}
+
+@keyframes sway {
+    0% { transform: translateX(-50%) translateX(-20px); }
+    50% { transform: translateX(-50%) translateX(20px); }
+    100% { transform: translateX(-50%) translateX(-20px); }
+}
+
+.greeting-cont {
+    position: relative;
+    z-index: 0;
+}
+
+.happy-img, .birthday-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150vh;
+    margin-top: 0vh;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+}
+
+.cheska-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0vh;
+    position: relative;
+    z-index: 0;
+}
+
+@media (max-width: 768px) {
+    .board-overlay {
+        width: 70vw;
+    }
+
+    .cheska-img {
+        width: 80vw;
+    }
+
+    .happy-img, .birthday-img {
+        width: 95vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .board-overlay {
+        width: 85vw;
+    }
+
+    .cheska-img {
+        width: 90vw;
+    }
+}
