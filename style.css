@@ -10,6 +10,7 @@ body {
 
 main {
     position: relative;
+    overflow: hidden;
 }
 
 img {
@@ -64,7 +65,7 @@ img {
     width: 100%;
 }
 
-.happy-img, .birthday-img {
+.happy-img{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,6 +74,21 @@ img {
     margin-left: auto;
     margin-right: auto;
     z-index: 1;
+    animation: slideFromTop 1.5s ease-out forwards;
+    animation-delay: 0s;
+}
+
+.birthday-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150vh;
+    margin-top: 0vh;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+    animation: slideFromTop 1.5s ease-out forwards;
+    animation-delay: 0s;
 }
 
 .cheska-img {
@@ -80,30 +96,21 @@ img {
     justify-content: center;
     align-items: center;
     margin-bottom: 0vh;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
     z-index: 0;
+    animation: slideFromTop 1.5s ease-out forwards;
+    animation-delay: 0s;
 }
 
-@media (max-width: 768px) {
-    .board-overlay {
-        width: 70vw;
+@keyframes slideFromTop {
+    from {
+        /* opacity: 0; */
+        transform: translateY(-600px);
     }
-
-    .cheska-img {
-        width: 80vw;
-    }
-
-    .happy-img, .birthday-img {
-        width: 95vw;
-    }
-}
-
-@media (max-width: 480px) {
-    .board-overlay {
-        width: 85vw;
-    }
-
-    .cheska-img {
-        width: 90vw;
+    to {
+        /* opacity: 1; */
+        transform: translateY(0);
     }
 }
